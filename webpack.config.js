@@ -1,4 +1,5 @@
 const path = require('path')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 
 //导入插件，得出一个构造函数
 const HtmlPlugin = require('html-webpack-plugin')
@@ -17,7 +18,8 @@ module.exports = {
         filename: 'js/bundle.js' //自定义webpack的打包导出文件名
     },
     plugins: [
-        htmlplugin //添加htmlplugin插件对象，webpack在运行前，读取这个插件实例并运行
+        htmlplugin, //添加htmlplugin插件对象，webpack在运行前，读取这个插件实例并运行
+        new CleanWebpackPlugin(),
     ],
     devServer: {
         open: true, //首次打包成功后，默认打开浏览器, 

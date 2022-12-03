@@ -14,7 +14,7 @@ module.exports = {
     entry: path.join(__dirname, "./src/index123.js"), //自定义webpack的打包入口
     output: {
         path: path.join(__dirname, "./dist"), //自定义webpack的打包导出目录
-        filename: 'bundle.js' //自定义webpack的打包导出文件名
+        filename: 'js/bundle.js' //自定义webpack的打包导出文件名
     },
     plugins: [
         htmlplugin //添加htmlplugin插件对象，webpack在运行前，读取这个插件实例并运行
@@ -37,7 +37,7 @@ module.exports = {
             //file-loader库 是url-loader加载器的内部依赖项，所以需要安装
             //如果匹配的use加载器只有一个时，可以直接写成字符串，或者写成数组也可以
             //limit参数为最大值设置，单位是字节，当大于这个限制时，图片使用网络请求获取，当小于这个3500字节时，图片会被转成base64随网页标签一起返回
-            {test: /\.png|jpg|jpeg|gif$/, use:'url-loader?limit=3500'},
+            {test: /\.png|jpg|jpeg|gif$/, use:'url-loader?limit=3500&outputPath=images'},
             //js结尾文件中，webpack默认不能处理的高级语法走下面匹配的loader加载器
             //exclude排除/node_modules/目录下的第三方包
             {test: /\.js$/, use:'babel-loader', exclude: /node_modules/},

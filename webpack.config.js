@@ -36,7 +36,8 @@ module.exports = {
 
             //file-loader库 是url-loader加载器的内部依赖项，所以需要安装
             //如果匹配的use加载器只有一个时，可以直接写成字符串，或者写成数组也可以
-            {test: /\.png|jpg|jpeg$/, use:'url-loader'},
+            //limit参数为最大值设置，单位是字节，当大于这个限制时，图片使用网络请求获取，当小于这个3500字节时，图片会被转成base64随网页标签一起返回
+            {test: /\.png|jpg|jpeg|gif$/, use:'url-loader?limit=3500'},
         ]
     }
 

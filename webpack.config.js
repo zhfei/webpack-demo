@@ -29,7 +29,10 @@ module.exports = {
         rules: [
             //test: 要匹配的文件类型， 
             //use:  要调用的loader,其中use数组的顺序是固定的，调用顺序是从后往前
-            {test: /\.css$/, use:['style-loader', 'css-loader']}
+            {test: /\.css$/, use:['style-loader', 'css-loader']},
+
+            //less库 是less-loader库加载器的内部依赖项，所以需要安装单不需要添加到处理规则中
+            {test: /\.less$/, use:['style-loader', 'css-loader', 'less-loader']},
         ]
     }
 

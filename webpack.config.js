@@ -23,6 +23,14 @@ module.exports = {
         open: true, //首次打包成功后，默认打开浏览器, 
         port: 8888, //设置使用的端口，http如果使用的80端口，默认是可以忽略的
         host: '127.0.0.1', //指定运行的主机地址
+    }, 
+
+    module: { //非js模块： webpack默认处理的模块是js结尾的。如果碰到其他模块，就查询这个key, 查询它们有没有对应的加载器，然后把这个模块交给对应的加载器
+        rules: [
+            //test: 要匹配的文件类型， 
+            //use:  要调用的loader,其中use数组的顺序是固定的，调用顺序是从后往前
+            {test: /\.css$/, use:['style-loader', 'css-loader']}
+        ]
     }
 
 }

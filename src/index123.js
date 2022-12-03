@@ -14,3 +14,17 @@ $(function () {
     $('li:odd').css('background-color','red')
     $('li:even').css('background-color','green')
 })
+
+
+
+function info(target) {
+    //为对象添加静态属性
+    target.info = 'Person info'
+}
+
+//使用一个webpack默认不支持的高级语法，装饰器，此时webpack会查询是否有其他rules中结尾为js的laoder加载器可以处理这个高级语法
+@info
+class Person {}
+
+
+console.log(Person.info);

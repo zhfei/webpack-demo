@@ -33,6 +33,8 @@ module.exports = {
 
             //less库 是less-loader库加载器的内部依赖项，所以需要安装单不需要添加到处理规则中
             {test: /\.less$/, use:['style-loader', 'css-loader', 'less-loader']},
+
+            {test: /\.png|jpg|jpeg$/, use:'url-loader'},
         ]
     }
 

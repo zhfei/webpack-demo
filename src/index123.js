@@ -5,7 +5,10 @@ import $ from 'jquery'
 import './css/index.css'
 //导入less类型模块
 import './css/index.less'
+//导入图片类型模块
+import img from './images/cat.jpeg'
 
+$('.box').attr('src',img)
 
 $(function () {
     $('li:odd').css('background-color','red')

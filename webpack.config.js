@@ -18,6 +18,11 @@ module.exports = {
     },
     plugins: [
         htmlplugin //添加htmlplugin插件对象，webpack在运行前，读取这个插件实例并运行
-    ]
+    ],
+    devServer: {
+        open: true, //首次打包成功后，默认打开浏览器, 
+        port: 8888, //设置使用的端口，http如果使用的80端口，默认是可以忽略的
+        host: '127.0.0.1', //指定运行的主机地址
+    }
 
 }

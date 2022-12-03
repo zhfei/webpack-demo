@@ -34,6 +34,8 @@ module.exports = {
             //less库 是less-loader库加载器的内部依赖项，所以需要安装单不需要添加到处理规则中
             {test: /\.less$/, use:['style-loader', 'css-loader', 'less-loader']},
 
+            //file-loader库 是url-loader加载器的内部依赖项，所以需要安装
+            //如果匹配的use加载器只有一个时，可以直接写成字符串，或者写成数组也可以
             {test: /\.png|jpg|jpeg$/, use:'url-loader'},
         ]
     }

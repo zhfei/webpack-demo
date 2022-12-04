@@ -10,6 +10,10 @@ const htmlplugin = new HtmlPlugin({
 })
 
 module.exports = {
+    //在开发阶段打开这个设置，可以在浏览器的js报错定位到源码的对应行数，点击能直接跳到源码。
+    //如果不设置的话：浏览器的js报错定位是webpack打包对应的内存包的行数，点击查看跳的是内存结果bundle.js包
+    devtool: 'eval-source-map',
+
     mode: "development", //mode: development, production 开发模式与生产模式配置
 
     entry: path.join(__dirname, "./src/index123.js"), //自定义webpack的打包入口

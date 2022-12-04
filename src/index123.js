@@ -27,4 +27,4 @@ function info(target) {
 class Person {}
 
 
-console.log(Person.info);
+consle.log(Person.info);

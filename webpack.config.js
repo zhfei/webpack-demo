@@ -10,9 +10,14 @@ const htmlplugin = new HtmlPlugin({
 })
 
 module.exports = {
+    //开发阶段
     //在开发阶段打开这个设置，可以在浏览器的js报错定位到源码的对应行数，点击能直接跳到源码。
     //如果不设置的话：浏览器的js报错定位是webpack打包对应的内存包的行数，点击查看跳的是内存结果bundle.js包
-    devtool: 'eval-source-map',
+    devtool: 'eval-source-map', //开发阶段，即展示源码行号，又可以跳到源码
+
+    // //生产阶段，建议使用nosources-source-map或者关闭该配置
+    // devtool: 'nosources-source-map', //生产阶段，可以展示源码行号，但不能跳到源码
+    // devtool: 'source-map', //生产阶段，即展示源码行号，又可以跳到源码，不建议这样配置
 
     mode: "development", //mode: development, production 开发模式与生产模式配置
 
